@@ -1,0 +1,28 @@
+{
+  "name": "offline-first-rn-app",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@10.34.7",
+  "engines": {
+    "node": "^22.13.0 || ^24.3.0 || >=26.0.0"
+  },
+  "scripts": {
+    "start": "pnpm start:watermelon",
+    "android": "pnpm android:watermelon",
+    "ios": "pnpm ios:watermelon",
+    "start:watermelon": "pnpm --filter @offline-first/watermelon start",
+    "android:watermelon": "pnpm --filter @offline-first/watermelon android",
+    "ios:watermelon": "pnpm --filter @offline-first/watermelon ios",
+    "pods:watermelon": "pnpm --filter @offline-first/watermelon pods",
+    "start:op-sqlite": "pnpm --filter @offline-first/op-sqlite start --port 8082",
+    "android:op-sqlite": "pnpm --filter @offline-first/op-sqlite android --port 8082",
+    "ios:op-sqlite": "pnpm --filter @offline-first/op-sqlite ios --port 8082",
+    "pods:op-sqlite": "pnpm --filter @offline-first/op-sqlite pods",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r --if-present test",
+    "check": "pnpm lint && pnpm typecheck && pnpm test",
+    "server": "pnpm --filter @offline-first/sync-server start",
+    "db:up": "sh scripts/db-up.sh"
+  }
+}
